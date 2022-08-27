@@ -29,7 +29,7 @@ int main()
     int arr[] = {1, 2, 3, 7, 9};
 
     int n = sizeof(arr) / sizeof(arr[0]);
-     cout<<"Array : ";
+    cout<<"Array : ";
     printArray(arr, n);
     reverseArray(arr, n);
     cout<<"Reverse Array : ";
