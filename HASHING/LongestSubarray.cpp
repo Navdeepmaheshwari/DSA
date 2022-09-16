@@ -47,7 +47,7 @@ int maxlen(int arr[], int n, int sum)
 }
 int main()
 {
-    int arr[] = {8, 3, 1, 5, -6, 6, 2, -2};
+    int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
     int sum = 0;
     int n = sizeof(arr) / sizeof(arr[0]);
     int ans = maxlenNaive(arr, n, sum);
