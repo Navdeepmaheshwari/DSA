@@ -18,11 +18,12 @@ void combinationRec(vector<int> arr, int ind, int target, vector<vector<int>> &r
     {
         if (i != ind && arr[i] == arr[i - 1])
             continue;
-        if (arr[i] > target)
-            break;
-        ds.push_back(arr[i]);
-        combinationRec(arr, i + 1, target - arr[i], res, ds);
-        ds.pop_back();
+        if (arr[i] <= target)
+        {
+            ds.push_back(arr[i]);
+            combinationRec(arr, i + 1, target - arr[i], res, ds);
+            ds.pop_back();
+        }
     }
 }
 vector<vector<int>> findCombination(vector<int> arr, int target)

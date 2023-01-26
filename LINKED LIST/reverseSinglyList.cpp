@@ -29,18 +29,17 @@ Node *reverseList(Node *head)
         return head;
     }
     Node *curr = head, *prev = NULL, *next = NULL;
+    // https://media.geeksforgeeks.org/wp-content/cdn-uploads/RGIF2.gif
     while (curr != NULL)
     {
         next = curr->next;
         curr->next = prev;
-
         prev = curr;
         curr = next;
     }
     head = prev;
     return head;
 }
-
 int main()
 {
     Node *head = new Node(10);

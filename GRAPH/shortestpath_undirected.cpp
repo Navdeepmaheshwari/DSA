@@ -57,14 +57,19 @@ void ShortestpathArray(vector<int> adj[], int v, int s)
 }
 int main()
 {
-    int v = 4; // no of vertices
+    int v = 8; // no of vertices
     vector<int> adj[v];
 
-    addEdge(adj, 0, 1);
-    addEdge(adj, 0, 2);
-    addEdge(adj, 1, 2);
-    addEdge(adj, 1, 3);
-    addEdge(adj, 2, 3);
+    addEdge(adj, 1,0);
+    addEdge(adj,2,1);
+    addEdge(adj, 0,3);
+    addEdge(adj, 3,7);
+    addEdge(adj, 3,4);
+    addEdge(adj, 7,4);
+    addEdge(adj,7,6);
+    addEdge(adj, 4,5);
+    addEdge(adj, 4,6);
+    addEdge(adj, 6,5);
 
     // printGraph(adj, v);
 

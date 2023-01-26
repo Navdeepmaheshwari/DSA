@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool isSorted(int arr[], int n)   // TIME COMPLEXITY--> O(n)
+bool isSorted(int arr[], int n) // TIME COMPLEXITY--> O(n)
 {
     int i;
 
@@ -11,7 +11,7 @@ bool isSorted(int arr[], int n)   // TIME COMPLEXITY--> O(n)
             return false;
         }
     }
-    return true; 
+    return true;
 }
 int main()
 {
@@ -20,12 +20,14 @@ int main()
 
     int n = sizeof(arr) / sizeof(arr[0]);
 
-   if( isSorted(arr, n)){
-       cout<<"Array is Sorted"<<endl;
-   }
-   else{
-       cout<<"Array is not Sorted"<<endl;
-   }
+    if (isSorted(arr, n))
+    {
+        cout << "Array is Sorted" << endl;
+    }
+    else
+    {
+        cout << "Array is not Sorted" << endl;
+    }
 
     return 0;
 }

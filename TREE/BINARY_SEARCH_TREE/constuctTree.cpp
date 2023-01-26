@@ -61,7 +61,7 @@ void printInorder(Node *node)
 }
 int main()
 {
-    int pre[] = {10, 5, 1, 7, 40, 50};
+    int pre[] = {8,5,1,7,10,12};
     int size = sizeof(pre) / sizeof(pre[0]);
 
     // Function call

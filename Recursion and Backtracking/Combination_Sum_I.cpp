@@ -32,7 +32,7 @@ vector<vector<int>> findCombination(vector<int> arr, int target)
 }
 int main()
 {
-    vector<int> arr = { 2, 3, 6, 7};
+    vector<int> arr = {2, 3, 6, 7};
     int target = 7;
     vector<vector<int>> ans;
     ans = findCombination(arr, target);

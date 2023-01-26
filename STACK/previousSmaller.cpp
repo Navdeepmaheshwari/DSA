@@ -24,7 +24,7 @@ void printPrevSmallerE(int arr[], int n)
 }
 int main()
 {
-    int arr[] = {6,2,5,4,1,5,6};
+    int arr[] = {1, 5, 0, 3, 4, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
     
     printPrevSmallerE(arr, n);
