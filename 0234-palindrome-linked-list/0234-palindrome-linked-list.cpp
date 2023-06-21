@@ -12,20 +12,32 @@ class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         
+        ListNode*slow=head,*fast=head;
         
-        stack<int>s;
-        ListNode*curr=head;
-        while(curr!=NULL){
-            s.push(curr->val);
-            curr=curr->next;
+        while(fast&&fast->next){
+            slow=slow->next;
+            fast=fast->next->next;
         }
-        curr=head;
-      
-        while(!s.empty()){
-            int temp=s.top();
-            s.pop();
-            if(temp!=curr->val)return false;
-            curr=curr->next;
+        
+        ListNode*prev=slow;
+        slow=slow->next;
+        prev->next=NULL;
+        
+        //revrsing the half list
+        while(slow){
+            ListNode*temp=slow->next;
+            slow->next=prev;
+            
+            prev=slow;
+            slow=temp;
+        }
+        
+        // now traversing from start and end
+        fast=head,slow=prev;
+        
+        while(slow){
+            if(slow->val!=fast->val)return false;
+           else fast = fast->next, slow = slow->next;
         }
         return true;
     }
