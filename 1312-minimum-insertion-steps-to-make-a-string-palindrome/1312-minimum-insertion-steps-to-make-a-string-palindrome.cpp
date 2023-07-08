@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int longestCommon (string s1, string s2, int n)
+    int longestCommon (string&s1, string&s2, int n)
     {
         vector<vector<int>>dp(n+1,vector<int>(n+1,-1));
         for(int i=0;i<=n;i++){
@@ -24,7 +24,7 @@ public:
         }
         return dp[n][n];
     }
-    int longestPalindromeSubseq(string s1) {
+    int longestPalindromeSubseq(string&s1) {
         int n=s1.size();
         string s2=s1;
         reverse(s1.begin(),s1.end());
