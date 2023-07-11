@@ -10,27 +10,26 @@
 class Solution {
 public:
     void graph(TreeNode*root, unordered_map<int,vector<int>>&mp){
-        
+        if(!root) return;
         if(root->left){
             mp[root->val].push_back(root->left->val);
-            mp[root->left->val].push_back(root->val);
-            
-            graph(root->left,mp);
+            mp[root->left->val].push_back(root->val);  
         }
         
         if(root->right){
             mp[root->val].push_back(root->right->val);
-            mp[root->right->val].push_back(root->val);
-            
-            graph(root->right,mp);
+            mp[root->right->val].push_back(root->val); 
         }
+        
+        graph(root->left,mp);
+        graph(root->right,mp);
     }
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
         
          if(k==0)
             return {target->val};
         
-        unordered_map<int,vector<int>>mp; //convert tree to graph first
+        unordered_map<int,vector<int>>mp; //adjacency list
         vector<int>ans;
         unordered_map<int,bool> vis;
         graph(root,mp);
