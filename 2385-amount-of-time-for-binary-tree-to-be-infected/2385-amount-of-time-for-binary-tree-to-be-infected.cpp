@@ -12,19 +12,19 @@
 class Solution {
 public:
    void graph(TreeNode*root, unordered_map<int,vector<int>>&mp){
+        if(!root) return;
         if(root->left){
             mp[root->val].push_back(root->left->val);
-            mp[root->left->val].push_back(root->val);
-            
-            graph(root->left,mp);
+            mp[root->left->val].push_back(root->val);  
         }
         
         if(root->right){
             mp[root->val].push_back(root->right->val);
-            mp[root->right->val].push_back(root->val);
-            
-            graph(root->right,mp);
+            mp[root->right->val].push_back(root->val); 
         }
+        
+        graph(root->left,mp);
+        graph(root->right,mp);
     }
     int amountOfTime(TreeNode* root, int start) {
         
