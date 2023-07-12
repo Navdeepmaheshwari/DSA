@@ -39,11 +39,10 @@ public:
                     dp[i][j]=dp[i-1][j-1];
                 }
                 else{
-                    int op1=1+dp[i][j-1]; //insert Operation
-                    int op2=1+dp[i-1][j]; //Delete Operation
-                    int op3=1+dp[i-1][j-1];  //Replace Operation 
-                    
-                    dp[i][j]=min({op1,op2,op3});
+                    // int op1=1+dp[i][j-1]; //insert Operation
+                    // int op2=1+dp[i-1][j]; //Delete Operation
+                    // int op3=1+dp[i-1][j-1];  //Replace Operation 
+                    dp[i][j]=1+min({dp[i][j-1],dp[i-1][j],dp[i-1][j-1]});
                 }
             }
         }
