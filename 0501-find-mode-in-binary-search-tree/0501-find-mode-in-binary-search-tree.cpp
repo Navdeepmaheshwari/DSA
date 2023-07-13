@@ -11,9 +11,11 @@
  */
 class Solution {
 public:
+    int mx = INT_MIN;
     void traverse(TreeNode*root,unordered_map<int,int>&mp){
         if(root){
             mp[root->val]++;
+            mx=max(mx,mp[root->val]);
             traverse(root->left,mp);
             traverse(root->right,mp);
         }
@@ -22,19 +24,13 @@ public:
         unordered_map<int,int>mp; //node,cnt
         traverse(root,mp);
         
-        //finding maximum cnt;
-        priority_queue<pair<int,int>>pq;
-        for(auto x:mp){
-            pq.push({x.second,x.first});
-        }
-        
-        int mx=pq.top().first;
         vector<int>ans;
-        while(!pq.empty()&&pq.top().first==mx){
-            ans.push_back(pq.top().second);
-            pq.pop();
+        for(auto x:mp){
+            if(x.second==mx){
+                ans.push_back(x.first);
+            }
         }
-        
+
         return ans;
     }
 };
