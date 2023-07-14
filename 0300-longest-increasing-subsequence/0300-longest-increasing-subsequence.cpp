@@ -3,18 +3,18 @@ public:
     int f(int curInd,int prevInd,vector<int>&nums,int n,vector<vector<int>>&dp){
         //Base Case
         if(curInd==n)return 0;
+        
         int len=0;
         
         if(dp[curInd][prevInd+1]!=-1)return dp[curInd][prevInd+1];
+        
         //not Take
-        int notTake=0+f(curInd+1,prevInd,nums,n,dp);
+        len=0+f(curInd+1,prevInd,nums,n,dp);
         
         //Take
-        int take=0;
         if(prevInd==-1||nums[prevInd]<nums[curInd]){
-           take=1+f(curInd+1,curInd,nums,n,dp);
+           len=max(len,1+f(curInd+1,curInd,nums,n,dp));
         }
-        len=max(take,notTake);
         return dp[curInd][prevInd+1]=len;
     }
     int lengthOfLIS(vector<int>& nums) {
