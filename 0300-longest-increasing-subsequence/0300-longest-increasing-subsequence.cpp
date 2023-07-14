@@ -31,6 +31,8 @@ public:
         for(int curInd=n-1;curInd>=0;curInd--){
             for(int prevInd=curInd-1;prevInd>=-1;prevInd--){
                 
+     //in dp second parameter always add +1 because of coordinate shifting
+
                 int len=0;
                 len=0+dp[curInd+1][prevInd+1];
                 
