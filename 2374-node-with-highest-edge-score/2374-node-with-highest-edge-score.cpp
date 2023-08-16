@@ -1,7 +1,6 @@
 class Solution {
 public:
     int edgeScore(vector<int>& edges) {
-        priority_queue<pair<int,int>>pq;
         int n=edges.size();
         unordered_map<int,long long>mp;
         
