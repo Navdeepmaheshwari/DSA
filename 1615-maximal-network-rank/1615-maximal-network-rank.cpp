@@ -11,10 +11,11 @@ public:
             mp[{x[0],x[1]}]++;
         }
       
-        for(auto x:cnt){
-            cout<<x<<" ";
-        }
-        cout<<endl;
+        // for(auto x:cnt){
+        //     cout<<x<<" ";
+        // }
+        // cout<<endl;
+        
         int maxx=INT_MIN;
         for(int i=0;i<n;i++){
          
