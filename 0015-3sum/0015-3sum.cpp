@@ -7,7 +7,7 @@ public:
         for(int i=0;i<n;i++){
             
             if(nums[i]>0)break;
-            if(i>0 && nums[i]==nums[i-1])continue;
+            if(i>0 && nums[i]==nums[i-1])continue; //repeated
             int low=i+1,high=n-1;
             
             while(low<high){
