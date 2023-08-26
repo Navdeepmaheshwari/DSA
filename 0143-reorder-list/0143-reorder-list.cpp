@@ -33,5 +33,6 @@ public:
         
         head->next=NULL;
         
+        temp.clear();
     }
 };
