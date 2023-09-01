@@ -1,27 +1,28 @@
 class Solution {
 public:
-    int solve(int i,int j,vector<int>&nums){
-       if(i>j)return 0;
-        if(i==j)return nums[i];
+   int solve(vector<int>& nums, bool turn ,int i, int j ){
+        if(i>j)
+            return 0;
         
-        //two case ya to left wala le ya right
-        int left=nums[i]+min(solve(i+1,j-1,nums),solve(i+2,j,nums));
-        int right=nums[j]+min(solve(i+1,j-1,nums),solve(i,j-2,nums));
+        if(turn){
+         return max(nums[i]+solve(nums,false,i+1,j),nums[j]+solve(nums,false,i,j-1));
+        }
         
-        return max(left,right);
+        else
+           return min(solve(nums,true,i+1,j),solve(nums,true,i,j-1));
+        
     }
     
-    bool PredictTheWinner(vector<int>& nums) {
-          int n=nums.size();  
-          int total=0;
-           for(auto x:nums){
-                total+=x;
-            }
-         int first=solve(0,n-1,nums);
-        cout<<first<<" "<<total<<endl;
-        //agar first ka total-first se jyda ya barabar then true(winner)
+    bool predictTheWinner(vector<int>& nums) {
+           int totalSum=0;
+        for(int i=0;i<nums.size();i++){
+            totalSum+=nums[i];
+        }
         
-        int second=total-first;
-      return first>=second;
+        int sum1= solve(nums,true,0,nums.size()-1);
+        
+        int sum2=totalSum-sum1;
+        
+        return sum1>=sum2;
     }
 };
