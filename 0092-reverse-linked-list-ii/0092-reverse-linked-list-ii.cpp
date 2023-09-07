@@ -30,7 +30,6 @@ public:
             prev->next=next;
         }
         
-       
         return temp->next;
     }
 };
