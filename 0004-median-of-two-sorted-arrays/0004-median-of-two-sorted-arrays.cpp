@@ -37,10 +37,11 @@ public:
         }
      
         
-        for(auto x:merge){
-            cout<<x<<" ";
-        }
-        cout<<endl;
+        // for(auto x:merge){
+        //     cout<<x<<" ";
+        // }
+        // cout<<endl;
+        
         int n=l1+l2;
         double median;
         cout<<n<<endl;
