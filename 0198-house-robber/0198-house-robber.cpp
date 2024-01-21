@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int solve(int ind,vector<int>& nums,int n,vector<int>&dp){
+int solve(int ind,vector<int>& nums,int n,vector<int>&dp){
         if(ind>=n){
             return 0;
         }
