@@ -13,7 +13,10 @@ public:
         {
             rmax[i]=max(height[i],rmax[i+1]);
         }
-
+        for(auto x:lmax)cout<<x<<" ";
+        cout<<endl;
+        for(auto x:rmax)cout<<x<<" ";
+        cout<<endl;
         for(int i=1; i<n-1; i++)
         {
             ans = ans + (min(lmax[i],rmax[i])-height[i]);
